@@ -11,7 +11,7 @@ default_args = {
 
 
 with DAG(dag_id="invoices_dag",
-         schedule_interval="@daily",
+         schedule_interval="*/5 * * * *",
          default_args=default_args,
          catchup=False) as dag:
     None
