@@ -14,7 +14,7 @@ default_args = {
 
 
 with DAG(dag_id="parallel_dag",
-         schedule_interval="@daily",
+         schedule_interval="*/15 * * * *",
          start_date=datetime(2020, 11, 1),
          default_args=default_args,
          catchup=False) as dag:
