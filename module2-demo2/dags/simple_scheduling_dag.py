@@ -5,7 +5,7 @@ from airflow.operators.dummy_operator import DummyOperator
 
 default_args = {
     "owner": "airflow",
-    "start_date": datetime(2020, 12, 1),
+    "start_date": datetime(2021, 12, 1),
     "retries": 1,
     "retry_delay": timedelta(minutes=5)
 }
@@ -13,7 +13,7 @@ default_args = {
 
 with DAG(dag_id="simple_scheduling_dag",
          schedule_interval="*/15 * * * *",
-         start_date=datetime(2020, 12, 1),
+         start_date=datetime(2021, 12, 1),
          default_args=default_args,
          catchup=False) as dag:
     task_1 = DummyOperator(task_id="task_1")
