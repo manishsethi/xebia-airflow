@@ -12,7 +12,7 @@ default_args = {
 
 with DAG(dag_id="complex_scheduling_dag",
          schedule_interval="*/15 * * * *",
-         start_date=datetime(2021, 12, 2),
+         start_date=datetime(2021, 12, 15),
          default_args=default_args,
          catchup=False) as dag:
     task_1 = DummyOperator(
@@ -21,7 +21,7 @@ with DAG(dag_id="complex_scheduling_dag",
     )
     task_2 = DummyOperator(
         task_id="task_2",
-        start_date=datetime(2021, 1, 1)
+        start_date=datetime(2021, 12, 11)
     )
     task_1 >> task_2
 
